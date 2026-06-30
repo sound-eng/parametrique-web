@@ -2,7 +2,7 @@
 
 Public download page for the Parametrique macOS installer. The site is served via **GitHub Pages** from the `docs/` folder. Release `.pkg` files are published as **GitHub Release assets** on this repository.
 
-Application source and build tooling live in [parametrique-audio-device](https://github.com/sound-eng/parametrique-audio-device).
+This is a distribution-only repository. Currently, the application source code is proprietary; however, this may change in the future.
 
 ## Site
 
