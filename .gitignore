@@ -1,0 +1,13 @@
+.DS_Store
+.AppleDouble
+._*
+
+# Local release artifacts (upload to GitHub Releases, do not commit)
+*.pkg
+dist/
+
+# Secrets
+.env
+.env.*
+*.p8
+*.pem

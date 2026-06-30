@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="How to install Parametrique on macOS." />
+    <title>Install — Parametrique</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Install Parametrique</h1>
+      <p class="tagline">Step-by-step guide for macOS.</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Before you start</h2>
+        <p>
+          Parametrique requires <strong>macOS 14.6 or later</strong>. The installer
+          places the HAL audio driver and the Parametrique app on your Mac.
+        </p>
+      </section>
+
+      <section>
+        <h2>1. Download</h2>
+        <p>
+          Get the latest <code>.pkg</code> from the
+          <a href="index.html">download page</a> or
+          <a href="https://github.com/sound-eng/Parametrique-web/releases">GitHub Releases</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Run the installer</h2>
+        <ol>
+          <li>Double-click <code>Parametrique-&lt;version&gt;.pkg</code>.</li>
+          <li>Follow the installer prompts and enter your admin password when asked.</li>
+          <li>When finished, the driver and app are installed system-wide.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>3. Select the audio device</h2>
+        <ol>
+          <li>Open <strong>System Settings → Sound</strong>.</li>
+          <li>Under Output, choose <strong>Parametrique EQ Device</strong>.</li>
+          <li>
+            If output is silent, raise the <strong>Parametrique EQ Device</strong>
+            level in <strong>Audio MIDI Setup</strong>.
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>4. Configure EQ</h2>
+        <ol>
+          <li>Launch <strong>Parametrique</strong> from <code>/Applications</code>.</li>
+          <li>Adjust the 8-band EQ and driver settings in the app.</li>
+          <li>EQ remains active after you quit the app — reopen only to change settings.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Uninstall</h2>
+        <p>
+          Open Parametrique → <strong>Settings → Driver → Uninstall…</strong> and
+          follow the embedded uninstaller.
+        </p>
+      </section>
+
+      <section>
+        <h2>Troubleshooting</h2>
+        <ul>
+          <li>
+            <strong>Crackling or pops</strong> — increase buffer size in Parametrique
+            → Settings.
+          </li>
+          <li>
+            <strong>Driver not found</strong> — reinstall from the latest
+            <code>.pkg</code> release.
+          </li>
+          <li>
+            <strong>Diagnostics</strong> — Parametrique → Settings → Export Diagnostics.
+          </li>
+        </ul>
+      </section>
+
+      <p><a href="index.html">← Back to download</a></p>
+    </main>
+
+    <footer class="site-footer">
+      <p>Requires macOS 14.6 or later.</p>
+    </footer>
+  </body>
+</html>

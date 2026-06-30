@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Download Parametrique — macOS virtual audio driver with 8-band parametric EQ."
+    />
+    <title>Parametrique</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Parametrique</h1>
+      <p class="tagline">
+        Virtual audio driver with per-channel parametric EQ for macOS. Menu bar
+        volume works with interfaces that have no software volume control.
+      </p>
+    </header>
+
+    <main>
+      <div class="download-card">
+        <p class="version" id="latest-version">Loading…</p>
+        <a class="download-btn" id="download-btn" href="#">Download</a>
+        <p class="download-meta" id="download-meta"></p>
+        <p class="hash" id="sha256" hidden></p>
+        <p class="error" id="load-error" hidden></p>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <strong>8-band parametric EQ</strong>
+          <span>Per-channel EQ with a live response graph. Settings persist after you quit the app.</span>
+        </div>
+        <div class="feature">
+          <strong>System volume control</strong>
+          <span>Proxies audio so keyboard and menu bar volume work with your output device.</span>
+        </div>
+        <div class="feature">
+          <strong>Driver + app</strong>
+          <span>One installer packages the HAL driver and the Parametrique configuration app.</span>
+        </div>
+      </div>
+
+      <section>
+        <h2>Quick install</h2>
+        <ol>
+          <li>Download and open <code>Parametrique-&lt;version&gt;.pkg</code>.</li>
+          <li>Complete the installer (one admin password prompt).</li>
+          <li>
+            Open <strong>System Settings → Sound</strong> and select
+            <strong>Parametrique EQ Device</strong> as output.
+          </li>
+          <li>Launch <strong>Parametrique</strong> from <code>/Applications</code>.</li>
+        </ol>
+        <p><a href="install.html">Detailed install guide →</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Requires macOS 14.6 or later.</p>
+      <p>
+        Source and development:
+        <a href="https://github.com/sound-eng/parametrique-audio-device">parametrique-audio-device</a>
+      </p>
+    </footer>
+
+    <script src="js/site.js"></script>
+  </body>
+</html>
