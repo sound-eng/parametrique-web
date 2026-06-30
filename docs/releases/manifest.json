@@ -10,7 +10,7 @@
       "fileName": "Parametrique-1.0.20.pkg",
       "downloadUrl": "https://github.com/sound-eng/parametrique-web/releases/download/v1.0.20/Parametrique-1.0.20.pkg",
       "sha256": null,
-      "notes": "macOS HAL virtual audio driver with 8-band per-channel parametric EQ."
+      "notes": "macOS HAL virtual audio driver with 8-band 2-channel parametric EQ."
     }
   ]
 }
