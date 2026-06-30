@@ -20,7 +20,7 @@ The download button reads `manifest.json` at runtime so you only update one file
 1. Open **Settings → Pages** on this repository.
 2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
 3. Choose branch **main** and folder **/docs**.
-4. Save. The site will be available at `https://sound-eng.github.io/Parametrique-web/` (or your custom domain).
+4. Save. The site will be available at `https://sound-eng.github.io/parametrique-web/` (or your custom domain).
 
 ## Publish a new release
 
