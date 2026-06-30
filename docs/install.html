@@ -13,7 +13,7 @@
       <p class="tagline">Step-by-step guide for macOS.</p>
     </header>
 
-    <main>
+    <main class="wide">
       <section>
         <h2>Before you start</h2>
         <p>
@@ -53,10 +53,37 @@
       </section>
 
       <section>
-        <h2>4. Configure EQ</h2>
+        <h2>4. Launch Parametrique and select target device</h2>
         <ol>
           <li>Launch <strong>Parametrique</strong> from <code>/Applications</code>.</li>
-          <li>Adjust the 8-band EQ and driver settings in the app.</li>
+          <li>
+            Open <strong>Parametrique → Settings</strong> (menu bar) and under
+            <strong>Proxied device</strong>, choose the physical output you want to
+            hear — your speakers, headphones, or audio interface.
+          </li>
+          <li>
+            Without this step, audio routed through Parametrique will go to first device in the list.
+          </li>
+        </ol>
+        <figure class="screenshot">
+          <img
+            src="assets/parametrique-main-window.png"
+            alt="Parametrique main window with Target device shown in the status bar"
+            width="1120"
+            height="720"
+          />
+          <figcaption>
+            After selecting a proxied device in Settings, the status bar shows
+            <strong>Target:</strong> followed by your output device name.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>5. Configure EQ</h2>
+        <ol>
+          <li>Adjust the 8-band EQ in the main window.</li>
+          <li>Change buffer size or other driver options in Settings if needed.</li>
           <li>EQ remains active after you quit the app — reopen only to change settings.</li>
         </ol>
       </section>
@@ -65,13 +92,18 @@
         <h2>Uninstall</h2>
         <p>
           Open Parametrique → <strong>Settings → Driver → Uninstall…</strong> and
-          follow the embedded uninstaller.
+          follow the embedded uninstaller. Afterwards, remove the app from <code>/Applications</code>.
         </p>
       </section>
 
       <section>
         <h2>Troubleshooting</h2>
         <ul>
+          <li>
+            <strong>No sound</strong> — confirm <strong>Proxied device</strong> is set in
+            Parametrique → Settings, and raise <strong>Parametrique EQ Device</strong>
+            level in Audio MIDI Setup.
+          </li>
           <li>
             <strong>Crackling or pops</strong> — increase buffer size in Parametrique
             → Settings.
