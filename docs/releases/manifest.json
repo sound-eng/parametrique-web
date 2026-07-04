@@ -1,8 +1,17 @@
 {
   "product": "Parametrique",
   "repository": "sound-eng/parametrique-web",
-  "latest": "1.0.20",
+  "latest": "1.0.22",
   "releases": [
+    {
+      "version": "1.0.22",
+      "published": "2026-07-04",
+      "minMacOS": "14.6",
+      "fileName": "Parametrique-1.0.22.pkg",
+      "downloadUrl": "https://github.com/sound-eng/parametrique-web/releases/download/v1.0.22/Parametrique-1.0.22.pkg",
+      "sha256": "7c97102d84c90a0665a62ed7a333f174859a8bc34fcc21b502bc57d74703bcdd",
+      "notes": "EQ presets, native toolbar, and smoother live graph while adjusting bands."
+    },
     {
       "version": "1.0.20",
       "published": "2026-06-30",
