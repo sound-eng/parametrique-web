@@ -1,83 +1,49 @@
-# Parametrique — Download Site
+# Parametrique
 
-Public download page for the Parametrique macOS installer. The site is served via **GitHub Pages** from the `docs/` folder. Release `.pkg` files are published as **GitHub Release assets** on this repository.
+![Parametrique main window](docs/assets/parametrique-main-window.png)
 
-This is a distribution-only repository. Currently, the application source code is proprietary; however, this may change in the future.
+macOS virtual audio driver and app with an 8-band per-channel parametric EQ. The UI is recognizable to sound engineers and audio enthusiasts alike.
 
-## Site
+Parametrique proxies system audio to your speakers or interface and processes it using proven DSP math. EQ settings persist after you quit the app — reopen it only when you want to change them.
 
-| Path | Purpose |
-|------|---------|
-| `docs/index.html` | Landing page with download button |
-| `docs/install.html` | Install guide |
-| `docs/releases/manifest.json` | Latest version, download URL, SHA-256 |
-| `docs/css/`, `docs/js/` | Static assets |
+This repository is the public **download site and release channel** for Parametrique — installers, documentation, and the GitHub Pages site. It does not contain the app or driver source code.
 
-The download button reads `manifest.json` at runtime so you only update one file per release.
+**[Download the latest release →](https://sound-eng.github.io/parametrique-web/)**
 
-## Enable GitHub Pages
+Requires **macOS 14.6 or later**.
 
-1. Open **Settings → Pages** on this repository.
-2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-3. Choose branch **main** and folder **/docs**.
-4. Save. The site will be available at `https://sound-eng.github.io/parametrique-web/` (or your custom domain).
 
-## Publish a new release
+## Quick start
 
-From `parametrique-audio-device`, build and notarize the installer:
+1. Download and open `Parametrique-<version>.pkg` from the [download page](https://sound-eng.github.io/parametrique-web/).
+2. In **System Settings → Sound**, select **Parametrique EQ Device** as output.
+3. Launch **Parametrique** from `/Applications`.
+4. Open **Parametrique → Settings** and choose your speakers or interface under **Proxied device**.
 
-```bash
-./scripts/build-distribution.sh --notarize
-```
 
-Then in this repo:
+## Using the app
 
-```bash
-# 1. Update manifest (version, URL, SHA-256)
-./scripts/update-manifest.sh 1.0.21 /path/to/Parametrique-1.0.21.pkg "Optional release notes."
+| Main window | Settings (Parametrique → Settings) |
+|-------------|-------------------------------------|
+| 8-band EQ, live response graph, L/R ganging, bypass | Proxied device, buffer size, driver options |
+| Changes apply to the driver immediately | Export Diagnostics when troubleshooting |
 
-# 2. Commit manifest
-git add docs/releases/manifest.json
-git commit -m "Release 1.0.21"
+- **EQ** — adjust bands in the main window; settings stay active after you quit.
+- **Proxied device** — pick the physical output you want to hear. Without this, audio routes to the first device in the list.
+- **No sound?** — confirm the proxied device is set and raise **Parametrique EQ Device** level in Audio MIDI Setup.
+- **Crackling?** — increase buffer size in Settings.
 
-# 3. Create GitHub Release and upload the .pkg
-gh release create v1.0.21 /path/to/Parametrique-1.0.21.pkg --title "1.0.21"
-```
+## Install
 
-The release tag must be `v<version>` (e.g. `v1.0.21`) and the uploaded file must be named `Parametrique-<version>.pkg` so the download URL in the manifest matches.
+A step-by-step install guide is on the site: [install guide](https://sound-eng.github.io/parametrique-web/install.html).
 
-### Pre-publish checklist
 
-- [ ] Version bumped in `parametrique-audio-device/shared/Version.xcconfig`
-- [ ] Installer built, signed, and notarized
-- [ ] Smoke test passed (see `parametrique-audio-device/packaging/SMOKE_TEST.md`)
-- [ ] `docs/releases/manifest.json` updated via `scripts/update-manifest.sh`
-- [ ] GitHub Release created with matching tag and `.pkg` asset
-- [ ] Download button on the site works
+## Uninstall
 
-## Local preview
+1. Remove the driver — **Parametrique → Settings → Driver → Uninstall…** (or delete `Parametrique.driver` manually from `/Library/Audio/Plug-Ins/HAL/`).
+2. Restart Core Audio if you deleted the driver manually: `sudo launchctl kickstart -k system/com.apple.audio.coreaudiod`
+3. Delete **Parametrique** from `/Applications`.
 
-Serve `docs/` with any static file server:
 
-```bash
-python3 -m http.server 8080 --directory docs
-```
 
-Open http://localhost:8080
 
-## Repository layout
-
-```text
-parametrique-web/
-├── docs/                  # GitHub Pages root
-│   ├── index.html
-│   ├── install.html
-│   ├── releases/manifest.json
-│   ├── css/
-│   └── js/
-├── scripts/
-│   └── update-manifest.sh
-└── README.md
-```
-
-Do not commit `.pkg` files — upload them to GitHub Releases only.
