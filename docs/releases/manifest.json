@@ -1,8 +1,17 @@
 {
   "product": "Parametrique",
   "repository": "sound-eng/parametrique-web",
-  "latest": "1.0.22",
+  "latest": "1.0.23",
   "releases": [
+    {
+      "version": "1.0.23",
+      "published": "2026-07-31",
+      "minMacOS": "14.6",
+      "fileName": "Parametrique-1.0.23.pkg",
+      "downloadUrl": "https://github.com/sound-eng/parametrique-web/releases/download/v1.0.23/Parametrique-1.0.23.pkg",
+      "sha256": "c0485e8afaccc30044b5a6ce165db69f2956c7399b96c0e1dea01686ed3d27e2",
+      "notes": "macOS HAL virtual audio driver with 8-band per-channel parametric EQ."
+    },
     {
       "version": "1.0.22",
       "published": "2026-07-04",
