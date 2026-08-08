@@ -1,8 +1,17 @@
 {
   "product": "Parametrique",
   "repository": "sound-eng/parametrique-web",
-  "latest": "1.0.23",
+  "latest": "1.0.24",
   "releases": [
+    {
+      "version": "1.0.24",
+      "published": "2026-08-08",
+      "minMacOS": "14.6",
+      "fileName": "Parametrique-1.0.24.pkg",
+      "downloadUrl": "https://github.com/sound-eng/parametrique-web/releases/download/v1.0.24/Parametrique-1.0.24.pkg",
+      "sha256": "06af7d5eae33b0af840d37eee574a4ea0917b9e822cf36ed003826024d06b603",
+      "notes": "- Target output volume/mute mirroring when the proxied device exposes hardware controls; otherwise Parametrique continues to own software volume (\u221225\u20260 dB). In mirror mode, Level uses the target\u2019s native dB range and volume curve.\n- Master **Balance** knob (under Level) when the target exposes a stereo pan control; reads/writes the target\u2019s Balance directly.\n- Settings toggle **Mirror hardware volume** (default on, persisted in the driver) to force software Level instead of forwarding to the target.\n- Process attenuation control (0\u2026\u221225 dB, L/R, gang-aware) for gain structure, always applied in software alongside EQ (unity when master EQ is bypassed).\n- System audio robustness: ~20 ms soft-mute on route rebuild/stop, device-loss pause or follow-alive default, sleep/wake auto-resume, richer tap/aggregate diagnostics.\n- Opt-in Settings toggle **Allow managing default system output** when switching Virtual device \u2194 System audio (off by default).\n- Opt-in **Minimize to menu bar on close** so Q can keep running after the window is closed (Open EQ / Settings / Quit from the status item).\n- Active preset name next to Presets in the toolbar, with  when the curve diverges from that preset.\n- Buffer size picker in System audio mode (same sizes as Virtual device); sets the private aggregate\u2019s  before IO starts, with a short fade/rebuild when changed live.\n- Permanent **Window \u2192 Parametrique** menu item to bring the EQ window back when it was closed to the menu bar.\n- System audio permission alert that deep-links to Privacy Settings when Core Audio reports ."
+    },
     {
       "version": "1.0.23",
       "published": "2026-07-31",
