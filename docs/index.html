@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Download Parametrique — macOS virtual audio driver with 8-band parametric EQ."
+      content="Download Parametrique — macOS parametric EQ for your system output, via a virtual audio device or a system audio tap."
     />
     <title>Parametrique</title>
     <link rel="stylesheet" href="css/style.css" />
@@ -14,7 +14,7 @@
     <header class="site-header">
       <h1>Parametrique</h1>
       <p class="tagline">
-        Virtual audio driver with per-channel parametric EQ for macOS.
+        Parametric EQ for your Mac’s system output — virtual device or system audio tap.
       </p>
     </header>
 
@@ -22,13 +22,13 @@
       <figure class="screenshot">
         <img
           src="assets/parametrique-main-window.png"
-          alt="Parametrique main window showing the 8-band EQ graph, per-band controls, and target device in the status bar"
+          alt="Parametrique main window showing the 8-band EQ graph, per-band controls, meters, and Level"
           width="1120"
           height="720"
         />
         <figcaption>
-          8-band parametric EQ with live response graph. The status bar shows your
-          selected target device.
+          8-band parametric EQ with live response graph, meters, and Level. Choose
+          Virtual device or System audio in Settings.
         </figcaption>
       </figure>
 
@@ -42,16 +42,16 @@
 
       <div class="features">
         <div class="feature">
-          <strong>2 - channel 8-band parametric EQ</strong>
-          <span>Per-channel EQ with a live response graph. Settings persist after you quit the app.</span>
+          <strong>2-channel 8-band parametric EQ</strong>
+          <span>Per-channel EQ with a live response graph, presets, and process attenuation.</span>
         </div>
         <div class="feature">
-          <strong>System volume control</strong>
-          <span>Proxies audio so keyboard and menu bar volume work with your output device.</span>
+          <strong>Two processing modes</strong>
+          <span>Virtual device keeps EQ after you quit; System audio EQs whatever is already playing (no driver required).</span>
         </div>
         <div class="feature">
-          <strong>Driver + app</strong>
-          <span>One installer packages the HAL driver and the Parametrique configuration app.</span>
+          <strong>Volume that fits your device</strong>
+          <span>Menu-bar volume via the virtual device, or Level / Balance mirrored to hardware when available.</span>
         </div>
       </div>
 
@@ -60,14 +60,21 @@
         <ol>
           <li>Download and open <code>Parametrique-&lt;version&gt;.pkg</code>.</li>
           <li>Complete the installer (one admin password prompt).</li>
-          <li>
-            Open <strong>System Settings → Sound</strong> and select
-            <strong>Parametrique EQ Device</strong> as output.
-          </li>
           <li>Launch <strong>Parametrique</strong> from <code>/Applications</code>.</li>
           <li>
-            Open <strong>Parametrique → Settings</strong> and choose your speakers or
-            interface under <strong>Proxied device</strong>.
+            Open <strong>Parametrique → Settings → Mode</strong> and pick one:
+            <ul>
+              <li>
+                <strong>Virtual device</strong> — set
+                <strong>Parametrique EQ Device</strong> as output in
+                <strong>System Settings → Sound</strong>, then choose your speakers
+                under <strong>Proxied device</strong>.
+              </li>
+              <li>
+                <strong>System audio</strong> — leave your normal output selected,
+                grant <strong>Audio Recording</strong> if prompted, and keep Parametrique running.
+              </li>
+            </ul>
           </li>
         </ol>
         <p><a href="install.html">Detailed install guide →</a></p>

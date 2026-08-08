@@ -18,8 +18,26 @@
         <h2>Before you start</h2>
         <p>
           Parametrique requires <strong>macOS 14.6 or later</strong>. The installer
-          places the HAL audio driver and the Parametrique app on your Mac.
+          places the Parametrique app and the optional HAL audio driver on your Mac.
         </p>
+        <p>
+          Choose a processing mode in <strong>Parametrique → Settings → Mode</strong>.
+          Only one is active at a time.
+        </p>
+        <ul>
+          <li>
+            <strong>Virtual device</strong> — install the driver (included in the
+            package), set <strong>Parametrique EQ Device</strong> as system output.
+            EQ keeps running after you quit the app.
+          </li>
+          <li>
+            <strong>System audio</strong> — no driver required for playback. Parametrique
+            taps the current default output, applies EQ in the app, and plays it back.
+            EQ stops when you quit. Needs
+            <strong>System Settings → Privacy &amp; Security → Audio Recording</strong>
+            permission.
+          </li>
+        </ul>
       </section>
 
       <section>
@@ -36,33 +54,38 @@
         <ol>
           <li>Double-click <code>Parametrique-&lt;version&gt;.pkg</code>.</li>
           <li>Follow the installer prompts and enter your admin password when asked.</li>
-          <li>When finished, the driver and app are installed system-wide.</li>
+          <li>When finished, the app (and driver) are installed system-wide.</li>
         </ol>
       </section>
 
       <section>
-        <h2>3. Select the audio device</h2>
+        <h2>3. Launch Parametrique</h2>
+        <ol>
+          <li>Launch <strong>Parametrique</strong> from <code>/Applications</code>.</li>
+          <li>
+            Open <strong>Parametrique → Settings</strong> and choose
+            <strong>Mode</strong>: <strong>Virtual device</strong> or
+            <strong>System audio</strong>.
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>4a. Virtual device mode</h2>
         <ol>
           <li>Open <strong>System Settings → Sound</strong>.</li>
           <li>Under Output, choose <strong>Parametrique EQ Device</strong>.</li>
           <li>
+            In Parametrique → Settings, under <strong>Proxied device</strong>, choose
+            the physical output you want to hear — speakers, headphones, or interface.
+          </li>
+          <li>
+            Without a proxied device, audio routed through Parametrique goes to the
+            first device in the list.
+          </li>
+          <li>
             If output is silent, raise the <strong>Parametrique EQ Device</strong>
             level in <strong>Audio MIDI Setup</strong>.
-          </li>
-        </ol>
-      </section>
-
-      <section>
-        <h2>4. Launch Parametrique and select target device</h2>
-        <ol>
-          <li>Launch <strong>Parametrique</strong> from <code>/Applications</code>.</li>
-          <li>
-            Open <strong>Parametrique → Settings</strong> (menu bar) and under
-            <strong>Proxied device</strong>, choose the physical output you want to
-            hear — your speakers, headphones, or audio interface.
-          </li>
-          <li>
-            Without this step, audio routed through Parametrique will go to first device in the list.
           </li>
         </ol>
         <figure class="screenshot">
@@ -80,11 +103,37 @@
       </section>
 
       <section>
+        <h2>4b. System audio mode</h2>
+        <ol>
+          <li>
+            Leave your normal speakers or interface selected as the default output in
+            <strong>System Settings → Sound</strong> (not Parametrique EQ Device).
+          </li>
+          <li>
+            In Settings → Mode, choose <strong>System audio</strong>. Grant
+            <strong>Audio Recording</strong> if macOS prompts you.
+          </li>
+          <li>
+            Keep Parametrique running (or enable
+            <strong>Minimize to menu bar on close</strong> so EQ continues after you
+            close the window).
+          </li>
+          <li>
+            Change the default output anytime — Parametrique follows. Quitting the app
+            returns audio to normal immediately.
+          </li>
+        </ol>
+      </section>
+
+      <section>
         <h2>5. Configure EQ</h2>
         <ol>
-          <li>Adjust the 8-band EQ in the main window.</li>
-          <li>Change buffer size or other driver options in Settings if needed.</li>
-          <li>EQ remains active after you quit the app — reopen only to change settings.</li>
+          <li>Adjust the 8-band EQ, Level, Balance, and process attenuation in the main window.</li>
+          <li>Change buffer size or other options in Settings if needed.</li>
+          <li>
+            In Virtual device mode, EQ remains active after you quit — reopen only to
+            change settings. In System audio mode, EQ runs only while the app is open.
+          </li>
         </ol>
       </section>
 
@@ -92,7 +141,12 @@
         <h2>Uninstall</h2>
         <p>
           Open Parametrique → <strong>Settings → Driver → Uninstall…</strong> and
-          follow the embedded uninstaller. Afterwards, remove the app from <code>/Applications</code>.
+          follow the embedded uninstaller (removes the HAL driver). Afterwards, remove
+          the app from <code>/Applications</code>.
+        </p>
+        <p>
+          System audio mode does not need the driver; you can leave the driver
+          uninstalled if you only use that mode.
         </p>
       </section>
 
@@ -100,20 +154,26 @@
         <h2>Troubleshooting</h2>
         <ul>
           <li>
-            <strong>No sound</strong> — confirm <strong>Proxied device</strong> is set in
-            Parametrique → Settings, and raise <strong>Parametrique EQ Device</strong>
-            level in Audio MIDI Setup.
+            <strong>No sound (Virtual device)</strong> — confirm
+            <strong>Proxied device</strong> is set in Parametrique → Settings, and raise
+            <strong>Parametrique EQ Device</strong> level in Audio MIDI Setup.
+          </li>
+          <li>
+            <strong>No sound / permission (System audio)</strong> — allow Parametrique
+            under <strong>System Settings → Privacy &amp; Security → Audio Recording</strong>.
+            Do not set Parametrique EQ Device as the default output in this mode.
           </li>
           <li>
             <strong>Crackling or pops</strong> — increase buffer size in Parametrique
-            → Settings.
+            → Settings (available in both modes).
           </li>
           <li>
             <strong>Driver not found</strong> — reinstall from the latest
-            <code>.pkg</code> release.
+            <code>.pkg</code> release, or switch to System audio mode.
           </li>
           <li>
-            <strong>Diagnostics</strong> — Parametrique → Settings → Export Diagnostics.
+            <strong>Diagnostics</strong> — Parametrique → Settings → Diagnostics
+            (Copy / Export…).
           </li>
         </ul>
       </section>

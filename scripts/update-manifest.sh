@@ -68,7 +68,7 @@ main() {
 
     local version="$1"
     local pkg_path="$2"
-    local notes="${3:-macOS HAL virtual audio driver with 8-band per-channel parametric EQ.}"
+    local notes="${3:-macOS parametric EQ for system output — virtual device or system audio tap.}"
 
     [[ "${version}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || die "VERSION must look like 1.0.21"
     [[ -f "${pkg_path}" ]] || die "PKG not found: ${pkg_path}"
